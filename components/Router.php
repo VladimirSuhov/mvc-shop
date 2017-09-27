@@ -35,12 +35,23 @@ class Router {
             // Compare $uriPattern and $uri
            if(preg_match("@$uriPattern@", $uri)) {
 
+           //Get the internal path from external by the rule
+                $internalRoute = preg_replace("@$uriPattern@", $path, $uri);
+
            // If there is a match, determine which controller and
            // action handles the request
-                $segments = explode('/', $path);
+                $segments = explode('/', $internalRoute);
                 $controllerName = array_shift($segments).'Controller';
                 $controllerName = ucfirst($controllerName);
                 $actionName = 'action'.ucfirst(array_shift($segments));
+                $parameters = $segments;
+
+//                echo '<br>Controller name:' . $controllerName;
+//                echo '<br>Action name:' . $actionName;
+//
+//                echo '<pre>';
+//                print_r($parameters);
+
 
            // Connect class-controller file
                $controllerFile = ROOT.'/controllers/' .
@@ -53,7 +64,7 @@ class Router {
 
                // Create an object, call the method (action)
                $controllerObject = new $controllerName;
-               $result = $controllerObject -> $actionName();
+               $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
                if ($result != null) {
                    break;
                }

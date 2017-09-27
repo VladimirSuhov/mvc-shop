@@ -7,7 +7,7 @@
  */
 
 return array(
-    'news/([0-9]+)' => 'news/view',
+    'news/([0-9]+)' => 'news/view/$1',
     'news' => 'news/index',
-    'products' => 'product/index'
+//    'products' => 'product/index'
 );
