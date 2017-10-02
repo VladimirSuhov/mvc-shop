@@ -48,9 +48,8 @@ class Router {
 
 //                echo '<br>Controller name:' . $controllerName;
 //                echo '<br>Action name:' . $actionName;
-//
-//                echo '<pre>';
-//                print_r($parameters);
+
+
 
 
            // Connect class-controller file
@@ -65,6 +64,8 @@ class Router {
                // Create an object, call the method (action)
                $controllerObject = new $controllerName;
                $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
+               echo '<pre>';
+               print_r($controllerObject);
                if ($result != null) {
                    break;
                }

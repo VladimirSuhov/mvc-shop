@@ -1,13 +1,15 @@
 <?php
 
+include_once ROOT . '/models/Category.php';
+include_once ROOT . '/models/Product.php';
 class ProductController {
 
-    public function actionIndex() {
-        echo 'ProductController, actionIndex';
-        return true;
-    }
+    public function actionView($productId) {
 
-    public function actionView($id) {
+        $categoryList = array();
+        $categoryList = Category::getCategoriesList();
+
+        $product = Product::getProductById($productId);
 
         include_once ROOT . '/views/products/product.php';
         return true;

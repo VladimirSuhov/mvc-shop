@@ -140,7 +140,7 @@
                                     <?php endif;?>
                                     <div class="overlay-content">
                                         <h2><?php echo $product['price'];?> $</h2>
-                                        <p><a href="/category/<?php echo $product['id'];?>"><?php echo $product['name'];?></a></p>
+                                        <p><a href="/product/<?php echo $product['id'];?>"><?php echo $product['name'];?></a></p>
                                         <a href="<?php echo $product['id'];?>" class="btn btn-default add-to-cart">
                                             <i class="fa fa-shopping-cart"></i>
                                             Add to cart

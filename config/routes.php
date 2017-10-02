@@ -9,7 +9,9 @@
 return array(
     'news/([0-9]+)' => 'news/view/$1',
     'news' => 'news/index',
-//    'product' => 'product/index',
+    'catalog' => 'catalog/index',
+    'category/([0-9]+)' => 'catalog/category/$1',
+    'category/([0-9]+)/page-([0-9]+)' => 'catalog/category/$1/$2',
     'product/([0-9]+)' => 'product/view/$1',
     'catalog/([0-9]+)' => 'catalog/catalog/$1',
     '' => 'site/index'
