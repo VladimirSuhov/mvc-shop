@@ -48,6 +48,12 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #000;
 }
 
+.pagination-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 a#scrollUp {
   bottom: 0px;
   right: 10px;

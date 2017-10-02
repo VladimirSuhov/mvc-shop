@@ -1,9 +1,5 @@
 <?php
 
-include_once ROOT . '/models/Category.php';
-include_once ROOT . '/models/Product.php';
-include_once ROOT . '/components/Pagination.php';
-
 class CatalogController
 {
     public function actionIndex() {
@@ -26,6 +22,12 @@ class CatalogController
 
         $categoryProducts = array();
         $categoryProducts = Product::getProductsListByCategoryId($categoryId, $page, 2);
+
+        $total = Product::getTotalProductsInCategory($categoryId);
+
+        // Create an obj Pagination
+
+        $pagination = new Pagination($total, $page, Product::SHOW_BY_DEFAULT, '');
 
         include_once ROOT . '/views/catalog/category.php';
 

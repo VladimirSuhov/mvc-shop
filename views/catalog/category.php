@@ -94,6 +94,9 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
+                <div class="pagination-wrapper">
+                    <?php echo $pagination->get(); ?>
+                </div>
             </div>
         </div>
 </section>
