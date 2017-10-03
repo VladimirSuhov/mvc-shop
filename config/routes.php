@@ -14,7 +14,9 @@ return array(
     'category/([0-9]+)/page-([0-9]+)' => 'catalog/category/$1/$2',
     'product/([0-9]+)' => 'product/view/$1',
     'catalog/([0-9]+)' => 'catalog/catalog/$1',
+    'account' => 'account/index',
     'user/register' => 'user/register',
+    'user/login' => 'user/login',
 
     '' => 'site/index'
 //    'products' => 'product/index'

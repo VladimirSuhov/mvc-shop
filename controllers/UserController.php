@@ -14,6 +14,7 @@ class UserController
         $name = '';
         $email = '';
         $password = '';
+        $result = '';
 
         if (isset($_POST['submit'])) {
             $name = $_POST['name'];

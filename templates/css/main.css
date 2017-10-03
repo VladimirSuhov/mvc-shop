@@ -8,9 +8,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
   position: relative;
-  font-weight:400px;
+  font-weight:400;
 }
 
 ul li {
@@ -905,7 +904,6 @@ h2.title {
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  opacity:;
 }
 
 .single-products:hover .product-overlay {
@@ -1443,7 +1441,9 @@ h2.title {
 }
 
 .signup-form {
-
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
 }
 
 .login-form h2, .signup-form h2 {
@@ -2176,7 +2176,7 @@ h2.title {
   text-transform: uppercase;
 }
 
-.rating-area 
+.rating-area ,
 .ratings .color, 
 .rating-area .color {
   color: #FE980F

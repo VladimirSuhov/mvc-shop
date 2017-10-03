@@ -3,25 +3,10 @@
 <section id="form"><!--form-->
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 col-sm-offset-1">
-                <div class="login-form"><!--login form-->
-                    <h2>Войдите в ваш аккаунт</h2>
-                    <form action="#">
-                        <input type="text" placeholder="Имя" />
-                        <input type="email" placeholder="Email" />
-                        <span>
-								<input type="checkbox" class="checkbox">
-								Запомнить меня
-							</span>
-                        <button type="submit" class="btn btn-default">Вход</button>
-                    </form>
-                </div><!--/login form-->
-            </div>
-            <div class="col-sm-1">
-                <h2 class="or">Или</h2>
-            </div>
-            <div class="col-sm-4">
+            <div class="col-sm-12 flex-container">
+                <div class="register-wrapper">
                 <?php if($result): ?>
+                    <?php echo $result;?>
                     <p>Вы зарегистрированы!</p>
                 <?php else: ?>
                 <?php if( isset($errors) && is_array($errors) ): ?>
@@ -42,6 +27,7 @@
                     </form>
                 </div><!--/sign up form-->
                 <?php endif; ?>
+                </div>
             </div>
         </div>
     </div>
