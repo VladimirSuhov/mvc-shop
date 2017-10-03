@@ -86,13 +86,20 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="/account/"><i class="fa fa-user"></i> Личный кабинет</a></li>
-<!--                            <li><a href="#"><i class="fa fa-star"></i> Закладки</a></li>-->
-<!--                            <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Сравнение</a></li>-->
-                            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
-<!--                            <li><a href="/user/register"><i class="fa fa-lock"></i> Вход</a></li>-->
-                            <li><a href="/user/login"><i class="fa fa-lock"></i> Вход</a></li>
 
+                            <!--<li><a href="#"><i class="fa fa-star"></i> Закладки</a></li>-->
+                            <!--li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Сравнение</a></li>-->
+
+                            <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
+
+                            <?php if (User::isGuest()): ?>
+                            <li><a href="/user/login"><i class="fa fa-lock"></i> Вход</a></li>
+                            <li><a href="/user/register"><i class="fa fa-lock"></i> Регистрация</a></li>
+
+                            <?php else: ?>
+                            <li><a href="/account/"><i class="fa fa-user"></i> Личный кабинет</a></li>
+                            <li><a href="/user/logout"><i class="fa fa-unlock"></i> Выход</a></li>
+                            <?php endif; ?>
                         </ul>
                     </div>
                 </div>

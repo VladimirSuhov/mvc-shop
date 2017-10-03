@@ -5,19 +5,17 @@
         <div class="row">
             <div class="col-sm-12 flex-container">
                 <div class="register-wrapper">
-                <?php if($result): ?>
-                    <?php echo $result;?>
-                    <p>Вы зарегистрированы!</p>
-                <?php else: ?>
-                <?php if( isset($errors) && is_array($errors) ): ?>
-                    <ul style="padding-left: 0">
-                        <?php foreach ($errors as $error): ?>
-                            <li style="color: red"><?php echo $error;?></li>
-                        <?php endforeach;?>
-                    </ul>
-                <?php endif;?>
-
                 <div class="signup-form"><!--sign up form-->
+                    <?php if($result): ?>
+                        <p>Вы зарегистрированы!</p>
+                    <?php else: ?>
+                    <?php if( isset($errors) && is_array($errors) ): ?>
+                        <ul style="padding-left: 0">
+                            <?php foreach ($errors as $error): ?>
+                                <li style="color: red"><?php echo $error;?></li>
+                            <?php endforeach;?>
+                        </ul>
+                    <?php endif;?>
                     <h2>Зарегистрируйтесь</h2>
                     <form action="#" method="post">
                         <input type="text" name="name" placeholder="Имя" value="<?php echo $name?>"/>

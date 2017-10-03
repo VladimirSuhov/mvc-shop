@@ -1440,12 +1440,14 @@ h2.title {
 
 }
 
-.signup-form {
+.signup-form, .login-form {
   max-width: 400px;
   width: 100%;
   margin: auto;
 }
-
+ul {
+  padding-left: 0;
+}
 .login-form h2, .signup-form h2 {
   color: #696763;
   font-family: 'Roboto', sans-serif;

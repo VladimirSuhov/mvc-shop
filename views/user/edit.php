@@ -7,7 +7,8 @@
             <div class="col-sm-12">
                 <div>
                     <div class="login-form"><!--login form-->
-
+                        <?php if($result): ?>
+                        <p>Данные отредактированы</p>
                         <?php if( isset($errors) && is_array($errors) ): ?>
                             <ul style="padding-left: 0">
                                 <?php foreach ($errors as $error): ?>
@@ -15,7 +16,7 @@
                                 <?php endforeach;?>
                             </ul>
                         <?php endif;?>
-                        <h2>Войдите в ваш аккаунт</h2>
+                        <h2>Редактирование данных</h2>
                         <form action="#" method="post">
                             <input type="email" name="email" placeholder="Email" value="<?php echo $email?>"/>
                             <input type="password" name="password" placeholder="Пароль" value="<?php echo $password?>"/>
@@ -26,6 +27,7 @@
                             <button type="submit" name="submit" class="btn btn-default">Вход</button>
                         </form>
                     </div><!--/login form-->
+                    <?php endif;?>
                 </div>
             </div>
         </div>

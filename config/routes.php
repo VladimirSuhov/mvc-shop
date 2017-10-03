@@ -15,8 +15,10 @@ return array(
     'product/([0-9]+)' => 'product/view/$1',
     'catalog/([0-9]+)' => 'catalog/catalog/$1',
     'account' => 'account/index',
+    'account/edit' => 'account/edit',
     'user/register' => 'user/register',
     'user/login' => 'user/login',
+    'user/logout' => 'user/logout',
 
     '' => 'site/index'
 //    'products' => 'product/index'

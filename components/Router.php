@@ -46,8 +46,8 @@ class Router {
                 $actionName = 'action'.ucfirst(array_shift($segments));
                 $parameters = $segments;
 
-//                echo '<br>Controller name:' . $controllerName;
-//                echo '<br>Action name:' . $actionName;
+                echo '<br>Controller name:' . $controllerName;
+                echo '<br>Action name:' . $actionName;
 
 
 

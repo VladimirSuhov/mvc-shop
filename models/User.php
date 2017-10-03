@@ -10,12 +10,75 @@ class User
                 . 'VALUES (:name, :email, :password)';
 
         $result = $db->prepare($sql);
-        $result->bindParam(':name',$email, PDO::PARAM_STR);
-        $result->bindParam(':email',$email, PDO::PARAM_STR);
-        $result->bindParam(':password',$email, PDO::PARAM_STR);
+        $result->bindParam(':name', $name, PDO::PARAM_STR);
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
+        $result->bindParam(':password', $password, PDO::PARAM_STR);
 
         return $result->execute();
     }
+
+
+    public static function checkUserData($email, $password) {
+
+        $db = DB::getConnection();
+
+        $sql = 'SELECT * FROM user WHERE email = :email AND password = :password';
+
+        $result = $db->prepare($sql);
+
+        $result->bindParam(':email', $email, PDO::PARAM_STR);
+        $result->bindParam(':password',$password, PDO::PARAM_STR);
+
+        $result->execute();
+
+        $user = $result->Fetch();
+        if($user) {
+            return $user['id'];
+        }
+            return false;
+    }
+
+    public static function auth($userId) {
+        session_start();
+        $_SESSION['user'] = $userId;
+    }
+
+    public static function checkLogged() {
+        session_start();
+
+        if (isset($_SESSION['user'])) {
+            return $_SESSION['user'];
+        }
+
+        header('location: /user/login');
+    }
+
+    public static function isGuest() {
+
+        if (isset($_SESSION['user'])) {
+            return false;
+        }
+            return true;
+    }
+
+    public static function getUserById($userId) {
+
+        $id = intval($userId);
+
+        if($id) {
+
+            $db = DB::getConnection();
+
+            $result = $db->query('SELECT * FROM user WHERE id=' . $userId);
+
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+
+            return $result->fetch();
+
+        }
+    }
+
+
 
     /*
      * Check if name less than 2 symbols
@@ -58,6 +121,21 @@ class User
 
         $result = $db->prepare($sql);
         $result->bindParam(':email',$email, PDO::PARAM_STR);
+        $result->execute();
+
+        if ($result->fetchColumn())
+            return true;
+        return false;
+    }
+
+    public static function edit($userId, $name, $password) {
+
+        $db = DB::getConnection();
+
+        $sql = 'UPDATE user SET name = :name, password = :';
+
+        $result = $db->prepare($sql);
+        $result->bindParam(':id',$userId, PDO::PARAM_STR);
         $result->execute();
 
         if ($result->fetchColumn())
