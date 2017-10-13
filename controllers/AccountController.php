@@ -9,7 +9,8 @@
 class AccountController
 {
 
-        public function actionIndex() {
+        public function actionIndex()
+        {
 
             $userId = User::checkLogged();
 

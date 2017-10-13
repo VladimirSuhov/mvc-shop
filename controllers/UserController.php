@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Vova
- * Date: 02.10.2017
- * Time: 18:03
- */
 class UserController
 {
 
@@ -73,7 +67,7 @@ class UserController
             } else {
                 User::auth($userId);
 
-                header("location: /account");
+                header("location:/account");
             }
 
         }
@@ -81,8 +75,8 @@ class UserController
     }
 
     public function actionLogout() {
-        session_start();
         unset($_SESSION['user']);
-        header("location: /");
+
+        header("location:/");
     }
 }

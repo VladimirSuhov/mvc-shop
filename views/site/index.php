@@ -1,4 +1,3 @@
-
 <?php require_once ROOT . '/views/layout/header.php';?>
 
 <section id="slider"><!--slider-->

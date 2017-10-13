@@ -1,4 +1,3 @@
-
 <?php require_once ROOT . '/views/layout/header.php';?>
 
 <section>
@@ -77,7 +76,7 @@
                                         <div class="overlay-content">
                                             <h2><?php echo $product['price'];?> $</h2>
                                             <p><a href="/product/<?php echo $product['id'];?>"><?php echo $product['name'];?></a></p>
-                                            <a href="<?php echo $product['id'];?>" class="btn btn-default add-to-cart">
+                                            <a href="/cart/add/<?php echo $product['id'];?>" data-productId="<?php echo $product['id'];?>" class="btn btn-default add-to-cart">
                                                 <i class="fa fa-shopping-cart"></i>
                                                 Add to cart
                                             </a>

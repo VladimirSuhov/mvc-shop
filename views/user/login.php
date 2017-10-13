@@ -1,4 +1,3 @@
-
 <?php require_once ROOT . '/views/layout/header.php';?>
 
 <section id="form"><!--form-->
@@ -32,4 +31,4 @@
     </div>
 </section><!--/form-->
 
-<?php require_once ROOT . '/views/layout/footer.php';?>
+<?php require_once ROOT . '/views/layout/footer.php';
