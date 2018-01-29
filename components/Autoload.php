@@ -6,7 +6,9 @@ function __autoload($class_name) {
 
     $array_path = array(
         '/models/',
-        '/components/'
+        '/components/',
+        '/libs/PHPExcel',
+        '/libs/'
     );
 
     foreach ($array_path as $path) {
